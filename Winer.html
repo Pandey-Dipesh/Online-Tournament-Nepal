@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced Tournament Panel</title>
+    <link rel="stylesheet" href="Winner.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<nav class="navbar">
+    <div class="navbar_container">
+        <a href="index.html" id="navbar_logo">OTN</a>
+        <div class="navbar_toggle" id="mobile-menu">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            
+            <span class="bar"></span>
+        </div>
+        <ul class="navbar_menu">
+            <li class="nav_item">
+                <a href="index.html" class="navbar_link">Home</a>
+            </li>
+            <li class="nav__item">
+                <a href="Winer.html" class="navbar_link">Winer</a>
+            </li>
+            <li class="nav_item">
+                <a href="Tournament.html" class="navbar_link">Tournament</a>
+                <li class="nav_item">
+                    <a href="https://forms.gle/LgzXnhQawujS8G1Z7" class="Button">Regiter</a>
+                </li>
+            </li>
+        </ul>
+    </div>
+</nav>
+<body>
+    <div class="container">
+        <h1>🏆 Tournament Winners 🏆</h1>
+        <button onclick="accessAdvancedPanel()">Access Advanced Panel</button>
+
+        <!-- Advanced Panel -->
+        <div id="advanced-panel" style="display: none;">
+            <h2>Advanced Panel</h2>
+            <form id="inputForm">
+                <label for="gameName">Game Name</label>
+                <input type="text" id="gameName" placeholder="Enter Game Name" required>
+
+                <label for="teamName">Team Name</label>
+                <input type="text" id="teamName" placeholder="Enter Team Name" required>
+
+                <label for="placement">Placement</label>
+                <input type="number" id="placement" placeholder="Enter Placement" min="1" required>
+
+                <label for="points">Points</label>
+                <input type="number" id="points" placeholder="Enter Points" min="0" required>
+
+                <button type="button" onclick="addGame()">Add Game</button>
+            </form>
+        </div>
+
+        <!-- Display Section -->
+        <div id="display-section">
+            <h2>Game Leaderboard</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Game Name</th>
+                        <th>Team Name</th>
+                        <th>Placement</th>
+                        <th>Points</th>
+                    </tr>
+                </thead>
+                <tbody id="gameTable">
+                    <!-- Dynamic Content -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+</body>
+<script src="script.js"></script>
+<script src="app.js"></script>
+</html>

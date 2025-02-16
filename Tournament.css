@@ -1,0 +1,113 @@
+/* General Styles */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Kumbh Sans', sans-serif;
+}
+
+/* Main Section */
+.tournament {
+    background-color: #141414;
+    color: #fff;
+    padding: 60px 20px;
+    text-align: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    border-radius: 8px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.tournament-name {
+    font-size: 2.5rem;
+    background-color: #ff6b6b;
+    background-image: linear-gradient(to top, #ff0844 0%, #ffb199 100%);
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+.date-time {
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+}
+
+.description {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    color: #ddd;
+    font-weight: 400;
+}
+
+.bracket-link {
+    display: inline-block;
+    font-size: 1.1rem;
+    background-color: #ff6b6b;
+    color: white;
+    text-decoration: none;
+    padding: 12px 24px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.bracket-link:hover {
+    background-color: #f7b7b7;
+}
+
+.registration-btn {
+    background-color: #ff6b6b;
+    color: white;
+    padding: 14px 32px;
+    font-size: 1.2rem;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.registration-btn:hover {
+    background-color: #f7b7b7;
+    transform: scale(1.05);
+}
+
+.registration-btn:focus {
+    outline: none;
+}
+
+/* Footer Styling */
+footer {
+    background-color: #131313;
+    padding: 20px;
+    text-align: center;
+    color: #fff;
+    font-size: 1rem;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+footer p {
+    margin: 0;
+}
+
+/* Responsive Styling */
+@media screen and (max-width: 960px) {
+    .tournament {
+        padding: 40px 20px;
+    }
+
+    .tournament-name {
+        font-size: 2rem;
+    }
+
+    .description {
+        font-size: 1rem;
+    }
+
+    .registration-btn, .bracket-link {
+        padding: 10px 20px;
+        font-size: 1rem;
+    }
+}

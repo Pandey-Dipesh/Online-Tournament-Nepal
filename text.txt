@@ -1,0 +1,47 @@
+/* mobile responvise */
+@media screen and (max-width:960px){
+    .main_container{
+        display: grid;
+        grid-template-columns: auto;
+        align-items: center;
+        justify-self: center;
+        width: 100%;
+        margin: 0 auto;
+        height: 90vh;
+        }
+    .main_content{
+        text-align: center;
+        margin-bottom: 4rem;
+
+    }
+    .main_content h1{
+        font-size: 2.5rem;
+        margin-top: 2rem;
+    
+    }
+    .main_content H2{
+        font-size: 3rem;
+    
+    }
+    .main_content p{
+        margin-top: 1rem;
+        font-size: 1.5rem;
+    }
+}
+@media screen and(max-width:480px) {
+    .main_content h1{
+        font-size: 2rem;
+        margin-top: 3rem;
+    }
+    .main_content h2{
+        font-size: 2rem;
+    }
+    .main_content p{
+        font-size: 1.5em;
+        margin-top: 2rem;  
+    }
+    .main_btn{
+        padding: 12pc 36px ;
+        margin: 2.5rem 0;
+    }
+}

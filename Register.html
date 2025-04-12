@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Join Online Tournament Nepal - Register for esports tournaments in Free Fire, PUBG, Chess, and Mobile Legends."/>
+  <title>Register | Online Tournament Nepal</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet"/>
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <style>
+    :root {
+      --primary-color: #1d3557;
+      --secondary-color: #00b4d8;
+      --accent-color: #ffea00;
+      --text-color: #333;
+      --background-color: #f1f1f1;
+      --menu-transition: all 0.3s ease-in-out;
+    }
+
+    body, html {
+      margin: 0;
+      padding: 0;
+      font-family: 'Inter', sans-serif;
+      color: var(--text-color);
+      background-color: var(--background-color);
+    }
+
+    .navbar {
+      background-color: var(--primary-color);
+      padding: 15px 20px;
+      color: white;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .navbar__container {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .navbar__logo {
+      font-size: 1.8rem;
+      font-weight: bold;
+      color: white;
+      text-decoration: none;
+    }
+
+    .navbar__menu {
+      display: flex;
+      list-style: none;
+      gap: 20px;
+      margin-left: auto;
+      transition: var(--menu-transition);
+    }
+
+    .navbar__item {
+      position: relative;
+    }
+
+    .navbar__link,
+    .navbar__cta {
+      text-decoration: none;
+      color: white;
+      font-size: 1rem;
+      padding: 8px 12px;
+      border-radius: 5px;
+      transition: background 0.3s ease;
+    }
+
+    .navbar__link:hover,
+    .navbar__cta:hover {
+      background-color: var(--secondary-color);
+    }
+
+    .navbar__cta {
+      background-color: var(--accent-color);
+      color: var(--primary-color);
+      font-weight: bold;
+    }
+
+    .navbar__toggle {
+      display: none;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 10px;
+    }
+
+    .navbar__hamburger {
+      display: block;
+      background-color: white;
+      height: 3px;
+      width: 25px;
+      border-radius: 2px;
+      position: relative;
+      transition: var(--menu-transition);
+    }
+
+    .navbar__hamburger::before,
+    .navbar__hamburger::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      background-color: white;
+      height: 3px;
+      width: 25px;
+      border-radius: 2px;
+      transition: var(--menu-transition);
+    }
+
+    .navbar__hamburger::before { top: -8px; }
+    .navbar__hamburger::after { top: 8px; }
+
+    .navbar__toggle.active .navbar__hamburger {
+      background-color: transparent;
+    }
+
+    .navbar__toggle.active .navbar__hamburger::before {
+      transform: translateY(8px) rotate(45deg);
+    }
+
+    .navbar__toggle.active .navbar__hamburger::after {
+      transform: translateY(-8px) rotate(-45deg);
+    }
+
+    @media (max-width: 768px) {
+      .navbar__toggle {
+        display: block;
+      }
+
+      .navbar__menu {
+        width: 100%;
+        flex-direction: column;
+        gap: 10px;
+        max-height: 0;
+        overflow: hidden;
+      }
+
+      .navbar__menu.active {
+        max-height: 500px;
+        padding: 10px 0;
+      }
+    }
+
+    .page-header {
+      text-align: center;
+      padding: 2rem 1rem;
+      background: linear-gradient(to right, var(--secondary-color), var(--primary-color));
+      border-radius: 16px;
+      color: rgb(255, 255, 255);
+      margin: 2rem auto;
+      max-width: 900px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+      padding: 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .card {
+      background: rgba(30, 39, 46, 0.25);
+      backdrop-filter: blur(12px);
+      border-radius: 20px;
+      padding: 1.5rem;
+      text-align: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .card:hover {
+      box-shadow: 0 0 25px rgba(0, 183, 216, 0.45);
+      transform: scale(1.03);
+    }
+
+    .card__meta {
+      font-size: 0.9rem;
+      color: #ffffff;
+      margin: 1rem 0;
+    }
+
+    .btn {
+      background-color: var(--secondary-color);
+      color: white;
+      padding: 0.75rem 1.5rem;
+      border-radius: 30px;
+      text-decoration: none;
+      display: inline-block;
+      transition: background-color 0.3s ease;
+    }
+
+    .btn:hover {
+      background-color: #007a8d;
+    }
+
+    .footer {
+      text-align: center;
+      background: var(--primary-color);
+      color: #bbb;
+      padding: 1.5rem 1rem;
+      margin-top: 2rem;
+    }
+
+    #countdown {
+      font-size: 1.5rem;
+      margin-top: 1rem;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <nav class="navbar">
+    <div class="navbar__container">
+      <a href="index.html" class="navbar__logo">OTN</a>
+      <button class="navbar__toggle" id="mobile-menu" aria-label="Toggle navigation" aria-expanded="false">
+        <span class="navbar__hamburger"></span>
+      </button>
+      <div class="navbar__menu" id="navbar-menu">
+        <a href="index.html" class="navbar__link">Home</a>
+        <a href="Winer.html" class="navbar__link">Winners</a>
+        <a href="Tournament.html" class="navbar__link">Tournaments</a>
+        <a href="Register.html" class="navbar__cta">Register</a>
+      </div>
+    </div>
+  </nav>
+
+  <header class="page-header">
+    <h1 class="page-title">🎮Tournament Registration</h1>
+    <p class="page-subtitle">Join Free Fire, PUBG, Chess & Mobile Legends Battles</p>
+    <div id="countdown">Loading...</div>
+  </header>
+
+  <main class="grid">
+    <!-- Updated cards with consistent structure -->
+    <div class="card">
+      <div class="card__icon">🔥</div>
+      <h2 class="card__title">Free Fire</h2>
+      <p class="card__meta">15-min | 4-player squad</p>
+      <a href="https://forms.gle/xArQsPdAornYQTKg7" class="btn">Register ➡️</a>
+    </div>
+    <div class="card">
+      <div class="card__icon">🎯</div>
+      <h2 class="card__title">PUBG Mobile</h2>
+      <p class="card__meta">30-min | Solo/Duo/Squad</p>
+      <a href="https://forms.gle/RVqz9Qt44fXT3CjF8" class="btn">Register ➡️</a>
+    </div>
+    <div class="card">
+      <div class="card__icon">♟️</div>
+      <h2 class="card__title">Chess</h2>
+      <p class="card__meta">10+5 Blitz | ELO-Based</p>
+      <a href="https://forms.gle/H8uPApHK18zUjLxv6" class="btn">Register ➡️</a>
+    </div>
+    <div class="card">
+      <div class="card__icon">⚔️</div>
+      <h2 class="card__title">Mobile Legends</h2>
+      <p class="card__meta">5v5 | Tournament Mode</p>
+      <a href="https://forms.gle/NNVE6s4jxi2L8RVv9" class="btn">Register ➡️</a>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <p>&copy; 2025 Online Tournament Nepal. All rights reserved.</p>
+    <a href="Tournament.html">Contact Us</a>
+  </footer>
+
+  <script>
+    // Mobile Menu Functionality
+    const toggleMenu = document.getElementById('mobile-menu');
+    const menu = document.getElementById('navbar-menu');
+
+    toggleMenu.addEventListener('click', () => {
+      const isActive = menu.classList.toggle('active');
+      toggleMenu.classList.toggle('active');
+      toggleMenu.setAttribute('aria-expanded', isActive);
+    });
+
+    // Close menu when clicking outside or on links
+    document.addEventListener('click', (e) => {
+      if (!menu.contains(e.target) && !toggleMenu.contains(e.target)) {
+        menu.classList.remove('active');
+        toggleMenu.classList.remove('active');
+        toggleMenu.setAttribute('aria-expanded', 'false');
+      }
+    });
+
+    document.querySelectorAll('.navbar__link, .navbar__cta').forEach(link => {
+      link.addEventListener('click', () => {
+        menu.classList.remove('active');
+        toggleMenu.classList.remove('active');
+        toggleMenu.setAttribute('aria-expanded', 'false');
+      });
+    });
+
+    // Countdown Timer
+    function updateCountdown() {
+      const targetDate = new Date('2024-12-31T00:00:00').getTime();
+      const now = new Date().getTime();
+      const diff = targetDate - now;
+
+      if (diff <= 0) {
+        document.getElementById('countdown').innerHTML = 'Tournament Live! 🎉';
+        return;
+      }
+
+      const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+
+      document.getElementById('countdown').innerHTML = `
+        ${days}d ${hours}h ${minutes}m ${seconds}s
+      `;
+    }
+
+    setInterval(updateCountdown, 1000);
+    updateCountdown();
+  </script>
+</body>
+</html>
